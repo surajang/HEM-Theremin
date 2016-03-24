@@ -13,6 +13,7 @@ void setup() {
 void loop() {
   // read the input on analog pin 0:
   int sensorValue = analogRead(A0);
-  Serial.println(sensorValue);
+  Serial.print(sensorValue);
+  Serial.print("\n");
   delay(10);        // Lil' delay for stability
 }
