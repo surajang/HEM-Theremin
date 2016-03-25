@@ -8,21 +8,20 @@
 import processing.sound.*;
 import processing.serial.*;
 
-SinOsc osc;
+SinOsc osc;   // Define the type of oscillator (Saw = SawOsc, Sine = SinOsc Triwave = TriOsc)
 Serial myPort;
 int frequency = 0;
 int lf = 10;
 String sensorData = null;
 
 void setup() {
-  size(200, 100);
+  size(200, 100);   // Just for simple sensor value meter
   frameRate(30);
   
   String portName = Serial.list()[1];
   println(portName);
   myPort = new Serial(this, portName, 115200);
-  // Create the oscillator. (Saw = SawOsc, Sine = SinOsc)
-  osc = new SinOsc(this);
+  osc = new SinOsc(this);   // Create the oscillator. (Saw = SawOsc, Sine = SinOsc Triwave = TriOsc)
   osc.freq(frequency);
   osc.play();
 }
